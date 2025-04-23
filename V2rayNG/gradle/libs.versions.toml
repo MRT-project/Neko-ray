@@ -1,6 +1,6 @@
 [versions]
 activity = "1.10.1"
-agp = "8.9.1"
+agp = "8.9.2"
 appcompat = "1.7.0"
 barcodeScanning = "17.3.0"
 constraintlayout = "2.2.1"
