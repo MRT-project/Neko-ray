@@ -3,17 +3,6 @@
         <attr name="radius" format="integer" />
     </declare-styleable>
 
-    <declare-styleable name="Theme">
-        <attr name="changelogStyle" format="reference" />
-        <attr name="changelogWindowStyle" format="reference" />
-        <attr name="changelogTitleStyle" format="reference" />
-        <attr name="changelogHeaderTitleStyle" format="reference" />
-        <attr name="changelogHeaderDateStyle" format="reference" />
-        <attr name="changelogHeaderSummaryStyle" format="reference" />
-        <attr name="changelogBulletStyle" format="reference" />
-        <attr name="changelogTextStyle" format="reference" />
-    </declare-styleable>
-
     <declare-styleable name="WaveView">
         <attr name="waveNumberOfWaves" format="integer" />
         <attr name="waveFrequency" format="float" />
@@ -26,14 +15,6 @@
         <attr name="waveColor" format="color" />
         <attr name="waveXAxisPositionMultiplier" format="float" />
     </declare-styleable>
-
-    <attr name="NoInternet_Dialog_Pendulum_airplaneColor" format="color" />
-    <attr name="NoInternet_Dialog_Signal_airplaneColor" format="color" />
-    <attr name="NoInternet_Dialog_Signal_topBottomShade" format="reference" />
-    <attr name="NoInternet_Dialog_Signal_round" format="reference" />
-    <attr name="NoInternet_Dialog_Signal_cloudColorOne" format="reference" />
-    <attr name="NoInternet_Dialog_Signal_cloudColorTwo" format="reference" />
-    <attr name="NoInternet_Dialog_Signal_cloudColorThree" format="reference" />
 
     <declare-styleable name="SwitchButton" tools:ignore="ResourceName">
         <attr name="kswThumbDrawable" format="reference"/>
@@ -81,6 +62,4 @@
         <attr name="iss_no_dots" format="boolean" />
         <attr name="iss_text_color" format="string"/>
     </declare-styleable>
-    
-    <attr name="colorThemeUwu" format="color" />
 </resources>
