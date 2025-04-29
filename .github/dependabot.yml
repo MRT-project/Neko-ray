@@ -22,3 +22,4 @@ updates:
       timezone: "Asia/Jakarta"
     ignore:
       - dependency-name: "com.tencent:mmkv-static*"
+      - dependency-name: "com.github.PhilJay:MPAndroidChart"
