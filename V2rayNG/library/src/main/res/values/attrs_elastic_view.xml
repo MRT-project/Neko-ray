@@ -1,5 +1,0 @@
-<resources>
-    <declare-styleable name="ElasticView">
-        <attr name="flexibility" format="float" />
-    </declare-styleable>
-</resources>

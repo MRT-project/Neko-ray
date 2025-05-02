@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <attr name="colorMainText" format="color"/>
     <attr name="colorIcon" format="color" />
     <attr name="colorText" format="color" />
@@ -27,4 +27,84 @@
     <attr name="NoInternet_Dialog_Signal_cloudColorOne" format="reference" />
     <attr name="NoInternet_Dialog_Signal_cloudColorTwo" format="reference" />
     <attr name="NoInternet_Dialog_Signal_cloudColorThree" format="reference" />
+
+    <declare-styleable name="BlurImageView">
+        <attr name="radius" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="WaveView">
+        <attr name="waveNumberOfWaves" format="integer" />
+        <attr name="waveFrequency" format="float" />
+        <attr name="waveAmplitude" format="float" />
+        <attr name="wavePhaseShift" format="float" />
+        <attr name="waveDensity" format="float" />
+        <attr name="wavePrimaryLineWidth" format="float" />
+        <attr name="waveSecondaryLineWidth" format="float" />
+        <attr name="waveBackgroundColor" format="color" />
+        <attr name="waveColor" format="color" />
+        <attr name="waveXAxisPositionMultiplier" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton" tools:ignore="ResourceName">
+        <attr name="kswThumbDrawable" format="reference"/>
+        <attr name="kswThumbColor" format="color|reference"/>
+        <attr name="kswThumbMargin" format="dimension|reference"/>
+        <attr name="kswThumbMarginTop" format="dimension|reference"/>
+        <attr name="kswThumbMarginBottom" format="dimension|reference"/>
+        <attr name="kswThumbMarginLeft" format="dimension|reference"/>
+        <attr name="kswThumbMarginRight" format="dimension|reference"/>
+        <attr name="kswThumbWidth" format="dimension|reference"/>
+        <attr name="kswThumbHeight" format="dimension|reference"/>
+        <attr name="kswThumbRadius" format="dimension|reference"/>
+        <attr name="kswBackRadius" format="dimension|reference"/>
+        <attr name="kswBackDrawable" format="reference"/>
+        <attr name="kswBackColor" format="color|reference"/>
+        <attr name="kswFadeBack" format="boolean"/>
+        <attr name="kswThumbRangeRatio" format="float"/>
+        <attr name="kswAnimationDuration" format="integer"/>
+        <attr name="kswTintColor" format="color|reference"/>
+        <attr name="kswTextOn" format="string"/>
+        <attr name="kswTextOff" format="string"/>
+        <attr name="kswTextThumbInset" format="dimension"/>
+        <attr name="kswTextExtra" format="dimension"/>
+        <attr name="kswTextAdjust" format="dimension"/>
+    </declare-styleable>
+    
+    <declare-styleable name="CircleImageView">
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="rainbowBorderEnabled" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ImageSlider">
+        <attr name="iss_auto_cycle" format="boolean" />
+        <attr name="iss_corner_radius" format="integer" />
+        <attr name="iss_period" format="integer" />
+        <attr name="iss_delay" format="integer" />
+        <attr name="iss_placeholder" format="reference" />
+        <attr name="iss_error_image" format="reference" />
+        <attr name="iss_selected_dot" format="reference" />
+        <attr name="iss_unselected_dot" format="reference" />
+        <attr name="iss_title_background" format="reference" />
+        <attr name="iss_text_align" format="string"/>
+        <attr name="iss_indicator_align" format="string"/>
+        <attr name="iss_no_dots" format="boolean" />
+        <attr name="iss_text_color" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ElasticView">
+        <attr name="flexibility" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="ParticlesView">
+        <attr name="minDotRadius" format="dimension" />
+        <attr name="maxDotRadius" format="dimension" />
+        <attr name="lineThickness" format="dimension" />
+        <attr name="lineDistance" format="dimension" />
+        <attr name="numDots" format="integer" />
+        <attr name="dotColor" format="color" />
+        <attr name="lineColor" format="color" />
+        <attr name="frameDelayMillis" format="integer" />
+        <attr name="stepMultiplier" format="float" />
+    </declare-styleable>
 </resources>

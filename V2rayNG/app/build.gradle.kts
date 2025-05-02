@@ -128,7 +128,6 @@ if (file("user.gradle").exists()) {
 dependencies {
     // Core Libraries
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar", "*.jar"))))
-    implementation(project(":library"))
 
     // AndroidX
     implementation(libs.androidx.core.ktx)

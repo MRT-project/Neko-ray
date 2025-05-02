@@ -21,5 +21,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Neko-ray"
-include(":library")
 include(":app")

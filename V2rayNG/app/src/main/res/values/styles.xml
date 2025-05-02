@@ -1,0 +1,296 @@
+<resources>
+
+    <style name="AppThemeDayNight" parent="@style/Theme.Material3.DayNight">
+        <item name="android:colorBackground">?attr/colorBg</item>
+        <item name="android:windowBackground">?attr/colorBg</item>
+        <item name="android:alertDialogTheme">@style/Theme.Base.AlertDialog</item>
+        <item name="android:scrollbarSize">0.0dip</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:homeAsUpIndicator">@drawable/uwu_back_arrow</item>
+        <item name="android:statusBarColor">?attr/colorThemeUwu</item>
+        <item name="android:navigationBarColor">?attr/colorSurfaceVariant</item>
+        <item name="android:colorEdgeEffect">@null</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="alertDialogTheme">@style/Theme.Base.AlertDialog</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Uwu.Material3.BottomSheetDialog</item>
+        <item name="colorAccent">?attr/colorPrimary</item>
+        <item name="colorBackgroundFloating">@color/uwu_bg_card</item>
+        <item name="colorIcon">@color/white</item>
+        <item name="colorMainText">@color/colorText</item>
+        <item name="colorThemeUwu">?attr/colorPrimary</item>
+        <item name="colorPrimaryDark">?attr/colorPrimary</item>
+        <item name="colorText">@color/colorText_ActionBar</item>
+        <item name="colorBg">?attr/colorSurfaceVariant</item>
+        <item name="editTextPreferenceStyle">@style/AppTheme.EditTextPreference</item>
+        <item name="elevation">0.0dip</item>
+        <item name="materialAlertDialogTheme">@style/Uwu.Material3.MaterialAlertDialog</item>
+        <item name="navigationViewStyle">@style/Widget.MaterialComponents.NavigationView</item>
+        <item name="popupTheme">?actionBarPopupTheme</item>
+        <item name="actionBarPopupTheme">@style/AppTheme.PopupOverlay</item>
+        <item name="popupMenuBackground">@drawable/uwu_bg_popup</item>
+        <item name="preferenceCategoryStyle">@style/Uwu.Preference.Category</item>
+        <item name="colorCard">@color/uwu_bg_card</item>
+    </style>
+
+    <style name="AppThemeDayNight.NoActionBar" parent="AppThemeDayNight">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppThemeDayNight">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+    <style name="BrandedSwitch" parent="AppTheme">
+        <item name="colorAccent">@color/color_fab_active</item>
+    </style>
+
+    <style name="AppTheme.SearchView" parent="">
+        <item name="android:editTextColor">@color/colorText_ActionBar</item>
+        <item name="android:textColorHint">@color/colorText_ActionBar</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Translucent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="@style/ThemeOverlay.MaterialComponents.Light">
+        <item name="android:tint">@color/colorText_ActionBar</item>
+        <item name="android:homeAsUpIndicator">@drawable/uwu_back_arrow</item>
+        <item name="colorControlNormal">@color/colorText_ActionBar</item>
+        <item name="colorSurface">?attr/colorThemeUwu</item>
+        <item name="colorOnSurface">@color/colorText_ActionBar</item>
+        <item name="colorOnSurfaceInverse">@color/colorText_ActionBar</item>
+        <item name="colorOnSurfaceVariant">@color/colorText_ActionBar</item>
+        <item name="colorPrimaryDark">?attr/colorThemeUwu</item>
+        <item name="titleTextColor">@color/colorText_ActionBar</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="@style/ThemeOverlay.Material3.Light">
+        <item name="android:backgroundTint">@color/uwu_bgcard_bottomsheet</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:tint">@color/colorText</item>
+        <item name="colorControlNormal">@color/colorText</item>
+    </style>
+
+    <style name="fab_square">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15.0dip</item>
+    </style>
+
+    <style name="CollapsingToolbarTitle.Expanded" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorText_ActionBar</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="Uwu.Material3.CollapsingToolbar" parent="@style/Widget.Material3.CollapsingToolbar.Large">
+        <item name="collapsedTitleTextColor">@color/colorText_ActionBar</item>
+        <item name="expandedTitleTextColor">@color/colorText_ActionBar</item>
+    </style>
+
+    <style name="Outline_TextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCollapsedPaddingTop">0.0dip</item>
+        <item name="boxCornerRadiusBottomEnd">8.0dip</item>
+        <item name="boxCornerRadiusBottomStart">8.0dip</item>
+        <item name="boxCornerRadiusTopEnd">8.0dip</item>
+        <item name="boxCornerRadiusTopStart">8.0dip</item>
+        <item name="boxStrokeWidth">1.5dip</item>
+        <item name="boxStrokeWidthFocused">1.5dip</item>
+    </style>
+
+    <style name="Uwu.Preference.Category" parent="@style/Preference.Category">
+        <item name="android:layout">@layout/uwu_preference_category</item>
+        <item name="android:selectable">false</item>
+        <item name="android:shouldDisableView">false</item>
+        <item name="allowDividerBelow">false</item>
+    </style>
+
+    <style name="Theme.Base.AlertDialog" parent="@style/ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:colorBackground">@drawable/uwu_dialog_bg</item>
+        <item name="android:backgroundDimAmount">0.50</item>
+        <item name="android:windowBackground">@drawable/uwu_dialog_bg</item>
+        <item name="android:windowAnimationStyle">@style/uwu_modder_app_anim</item>
+        <item name="android:windowMinWidthMajor">55.000008%</item>
+        <item name="android:windowMinWidthMinor">87.00001%</item>
+        <item name="android:windowElevation">@dimen/m3_sys_elevation_level1</item>
+    </style>
+
+    <style name="uwu_modder_app_anim" parent="@style/uwu_modder_app">
+        <item name="android:windowEnterAnimation">@anim/uwu_anim_open</item>
+        <item name="android:windowExitAnimation">@anim/uwu_anim_exit</item>
+    </style>
+
+    <style name="uwu_modder_app" parent="@style/uwu_alert_dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/uwu_modder_app_anim</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="uwu_alert_dialog" parent="@style/Theme.Base.AlertDialog">
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="uwu_splash_theme" parent="@style/AppThemeDayNight">
+        <item name="android:statusBarColor">?attr/colorPrimaryContainer</item>
+        <item name="android:navigationBarColor">?attr/colorPrimaryContainer</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.Welcome" parent="@style/AppThemeDayNight">
+        <item name="android:statusBarColor">?colorBg</item>
+        <item name="android:navigationBarColor">?colorBg</item>
+        <item name="android:windowLightStatusBar">@bool/navigation_color</item>
+        <item name="android:windowLightNavigationBar">@bool/navigation_color</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Uwu.Design.FloatingActionButton" parent="@style/Widget.Design.FloatingActionButton">
+        <item name="android:background">@null</item>
+        <item name="backgroundTint">?attr/colorThemeUwu</item>
+        <item name="elevation">4.0dip</item>
+        <item name="enforceMaterialTheme">true</item>
+        <item name="ensureMinTouchTargetSize">true</item>
+        <item name="hideMotionSpec">@animator/mtrl_fab_hide_motion_spec</item>
+        <item name="hoveredFocusedTranslationZ">@dimen/mtrl_fab_translation_z_hovered_focused</item>
+        <item name="pressedTranslationZ">@dimen/mtrl_fab_translation_z_pressed</item>
+        <item name="rippleColor">@color/mtrl_fab_ripple_color</item>
+        <item name="shapeAppearance">?shapeAppearanceSmallComponent</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton</item>
+        <item name="showMotionSpec">@animator/mtrl_fab_show_motion_spec</item>
+    </style>
+    
+    <style name="Uwu.Material3.MaterialAlertDialog" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:windowAnimationStyle">@style/uwu_modder_app_anim</item>
+        <item name="android:windowMinWidthMajor">65.000008%</item>
+        <item name="android:windowMinWidthMinor">95.00001%</item>
+        <item name="android:checkedTextViewStyle">@style/Widget.Material3.CheckedTextView</item>
+        <item name="android:windowElevation">@dimen/m3_alert_dialog_elevation</item>
+        <item name="alertDialogStyle">@style/Uwu.Base.AlertDialog</item>
+        <item name="buttonBarButtonStyle">@style/Uwu.TextButton.Dialog.Material3</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Uwu.TextButton.Dialog.Material3</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Uwu.TextButton.Dialog.Flush.Material3</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Uwu.TextButton.Dialog.Material3</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/Uwu.Dialog.Body.Text.Material3</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/MaterialAlertDialog.Material3.Title.Icon</item>
+        <item name="materialAlertDialogTitlePanelStyle">@style/MaterialAlertDialog.Material3.Title.Panel</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.Material3.Title.Text</item>
+    </style>
+    
+    <style name="Uwu.Dialog.Body.Text.Material3" parent="@style/MaterialAlertDialog.Material3.Body.Text">
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    
+    <style name="Uwu.TextButton.Dialog.Material3" parent="@style/Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+    <style name="Uwu.TextButton.Dialog.Flush.Material3" parent="@style/Widget.Material3.Button.TextButton.Dialog.Flush">
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+    <style name="Uwu.Base.AlertDialog" parent="@style/MaterialAlertDialog.MaterialComponents">
+        <item name="android:layout">@layout/abc_alert_dialog_material</item>
+        <item name="backgroundTint">@color/uwu_bg_dialog</item>
+        <item name="enforceMaterialTheme">true</item>
+        <item name="shapeAppearance">?shapeAppearanceCornerExtraLarge</item>
+    </style>
+
+    <style name="Dialog.Signal" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="colorPrimaryVariant">@color/colorPrimaryDarkuwu</item>
+        <item name="colorSecondary">@color/colorPrimaryuwu</item>
+        <item name="colorSecondaryVariant">@color/colorPrimaryDarkuwu</item>
+
+        <item name="android:colorBackground">#f5f5f5</item>
+        <item name="colorSurface">#f5f5f5</item>
+        <item name="colorError">@color/flat_red_1</item>
+
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/flat_grey_dark_2</item>
+        <item name="colorOnSurface">@color/flat_grey_dark_2</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- Customs -->
+        <item name="NoInternet_Dialog_Signal_airplaneColor">#555</item>
+        <item name="NoInternet_Dialog_Signal_topBottomShade">@drawable/top_bottom_shade</item>
+
+        <item name="NoInternet_Dialog_Signal_round">@drawable/round</item>
+
+        <item name="NoInternet_Dialog_Signal_cloudColorOne">@drawable/ic_cloud_1</item>
+        <item name="NoInternet_Dialog_Signal_cloudColorTwo">@drawable/ic_cloud_2</item>
+        <item name="NoInternet_Dialog_Signal_cloudColorThree">@drawable/ic_cloud_3</item>
+    </style>
+
+    <style name="AboutLibrariesStyle" parent="">
+        <!-- AboutLibraries specific values -->
+        <item name="aboutLibrariesCardBackground">@color/uwu_bg_card</item>
+        <item name="aboutLibrariesDescriptionTitle">?android:textColorPrimary</item>
+        <item name="aboutLibrariesDescriptionText">?android:textColorSecondary</item>
+        <item name="aboutLibrariesDescriptionDivider">@color/description_divider</item>
+        <item name="aboutLibrariesOpenSourceTitle">?android:textColorPrimary</item>
+        <item name="aboutLibrariesOpenSourceText">?android:textColorSecondary</item>
+        <item name="aboutLibrariesOpenSourceTextVersion">@color/colorText_ActionBar</item>
+        <item name="aboutLibrariesSpecialButtonText">?android:textColorPrimary</item>
+        <item name="aboutLibrariesOpenSourceDivider">@color/opensource_divider</item>
+    </style>
+
+    <style name="ThemeOverlay.Uwu.Material3.BottomSheetDialog" parent="@style/ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="android:statusBarColor">?colorPrimary</item>
+        <item name="android:navigationBarColor">?colorSurfaceVariant</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Material3.BottomSheetDialog</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/Widget.Material3.BottomSheet.Modal</item>
+        <item name="enableEdgeToEdge">true</item>
+    </style>
+
+    <style name="AppTheme.EditTextPreference" parent="@style/Preference.DialogPreference.EditTextPreference.Material">
+        <item name="dialogLayout">@layout/uwu_dialog_edittext</item>
+        <item name="iconSpaceReserved">false</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="@style/Widget.Material3.Button">
+        <item name="android:paddingTop">8.0dip</item>
+        <item name="android:paddingBottom">8.0dip</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingStart">16.0dip</item>
+        <item name="android:paddingEnd">16.0dip</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0.0dip</item>
+    </style>
+
+    <style name="neko_CrashLoggerTheme" parent="@style/AppThemeDayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

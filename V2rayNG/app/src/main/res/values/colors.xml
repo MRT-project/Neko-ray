@@ -87,4 +87,6 @@
     <color name="server_online_bg">#D0F5D6</color>
     <color name="server_offline_bg">#FAD2D2</color>
     <color name="server_card_bg">#EEEEEE</color>
+
+    <color name="startColor">#59FFFFFF</color>
 </resources>
