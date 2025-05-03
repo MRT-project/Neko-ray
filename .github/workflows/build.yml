@@ -126,7 +126,7 @@ jobs:
         cd ${{ github.workspace }}/V2rayNG
         echo "sdk.dir=${ANDROID_HOME}" > local.properties
         chmod 755 gradlew
-        ./gradlew assemble
+        ./gradlew assembleRelease
 
     - name: arm64
       uses: actions/upload-artifact@v4
