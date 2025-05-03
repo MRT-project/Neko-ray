@@ -1,5 +1,8 @@
 package com.neko.speedtest
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -58,7 +61,19 @@ class SpeedTestActivity : BaseActivity() {
         stopButton.visibility = View.GONE
     }
 
+    private fun isInternetAvailable(): Boolean {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork
+        val capabilities = connectivityManager.getNetworkCapabilities(network)
+        return capabilities != null && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+
     private fun startSpeedTest() {
+        if (!isInternetAvailable()) {
+            Toast.makeText(this, "Please check your connection internet", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         startButton.visibility = View.GONE
         stopButton.visibility = View.VISIBLE
 
@@ -84,21 +99,23 @@ class SpeedTestActivity : BaseActivity() {
                 val uploadSpeed = measureUploadSpeed()
                 textUpload.text = "%.2f Mbps".format(uploadSpeed)
 
-                delay(1500)
-                speedometer.speedTo(0f)
-                delay(500)
-            } catch (_: CancellationException) {
-                textPing.text = "Canceled"
-                textJitter.text = "Canceled"
-                textDownload.text = "Canceled"
-                textUpload.text = "Canceled"
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@SpeedTestActivity, "Error: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
+                    textPing.text = "Error"
+                    textJitter.text = "Error"
+                    textDownload.text = "Error"
+                    textUpload.text = "Error"
+                }
             } finally {
-                speedometer.animate().alpha(0f).setDuration(600).withEndAction {
-                    speedometer.visibility = View.GONE
-                }.start()
+                withContext(Dispatchers.Main) {
+                    speedometer.animate().alpha(0f).setDuration(600).withEndAction {
+                        speedometer.visibility = View.GONE
+                    }.start()
 
-                startButton.visibility = View.VISIBLE
-                stopButton.visibility = View.GONE
+                    startButton.visibility = View.VISIBLE
+                    stopButton.visibility = View.GONE
+                }
             }
         }
     }
@@ -177,7 +194,7 @@ class SpeedTestActivity : BaseActivity() {
                             val elapsed = (System.nanoTime() - startTime) / 1_000_000_000.0
                             val currentSpeed = (uploaded * 8) / (elapsed * 1000 * 1000)
                             speedMbps = currentSpeed
-                            runBlocking(Dispatchers.Main) {
+                            scope.launch(Dispatchers.Main) {
                                 speedometer.speedTo(currentSpeed.toFloat())
                             }
                             lastUpdate = now
