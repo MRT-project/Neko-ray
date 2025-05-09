@@ -9,7 +9,7 @@
     <com.neko.waveview.WaveView
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="450.0dip"
+        android:layout_height="360.0dip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
