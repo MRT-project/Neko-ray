@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:gravity="center_vertical"
+    android:id="@+id/item_bg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="16.0dip"
+    android:layout_marginTop="8.0dip"
+    android:layout_marginRight="16.0dip"
+    android:layout_marginBottom="8.0dip"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.google.android.material.card.MaterialCardView
-        android:orientation="horizontal"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16.0dip"
-        android:layout_marginTop="5.0dip"
-        android:layout_marginRight="16.0dip"
-        android:layout_marginBottom="11.0dip"
-        app:strokeWidth="0.0dip"
         app:cardBackgroundColor="@color/uwu_bg_card"
         app:cardCornerRadius="24.0dip"
         app:cardElevation="0.0dip">
@@ -74,7 +74,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:id="@+id/layout_edit"
-                    android:background="?android:selectableItemBackground"
+                    android:background="?selectableItemBackgroundBorderless"
                     android:padding="12.0dip"
                     android:focusable="true"
                     android:clickable="true"
@@ -90,7 +90,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:id="@+id/layout_remove"
-                    android:background="?android:selectableItemBackground"
+                    android:background="?selectableItemBackgroundBorderless"
                     android:padding="12.0dip"
                     android:focusable="true"
                     android:nextFocusLeft="@+id/info_container"
@@ -105,5 +105,5 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
