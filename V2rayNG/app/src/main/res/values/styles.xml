@@ -129,6 +129,8 @@
         <item name="android:windowMinWidthMajor">55.000008%</item>
         <item name="android:windowMinWidthMinor">87.00001%</item>
         <item name="android:windowElevation">@dimen/m3_sys_elevation_level1</item>
+        <item name="android:divider">@null</item>
+        <item name="android:showDividers">none</item>
     </style>
 
     <style name="uwu_modder_app_anim" parent="@style/uwu_modder_app">
