@@ -58,8 +58,6 @@ import androidx.core.app.ActivityCompat
 import com.neko.appupdater.AppUpdater
 import com.neko.config.V2rayConfigActivity
 import com.neko.expandable.layout.ExpandableView
-import com.neko.themeengine.ThemeChooserDialogBuilder
-import com.neko.themeengine.ThemeEngine
 import com.neko.tools.NetworkSwitcher
 import com.neko.tools.BatteryOptimization
 import com.neko.speedtest.SpeedTestActivity
@@ -438,7 +436,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.theme_settings -> {
-            SettingsFragmentTheme().show(supportFragmentManager, "Theme Settings")
+            startActivity(Intent(this, ThemeSettingsActivity::class.java))
             true
         }
 

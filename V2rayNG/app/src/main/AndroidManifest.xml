@@ -287,6 +287,12 @@
             android:exported="false" />
 
         <activity
+            android:name="com.neko.v2ray.ui.ThemeSettingsActivity"
+            android:theme="@style/AppThemeDayNight.NoActionBar"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
             android:theme="@style/neko_CrashLoggerTheme"
             android:name="com.neko.crashlog.CrashDialogActivity"
             android:exported="true"

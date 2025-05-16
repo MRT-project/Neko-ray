@@ -1,0 +1,14 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:paddingEnd="0dp"
+    android:paddingStart="0dp"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/circlePreview"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:scaleType="centerInside" />
+</FrameLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:layout="@layout/theme_banner"
+        android:selectable="false" />
+
+    <com.quickersilver.themeengine.sample.ThemePreviewPreference
+        android:key="theme"
+        android:layout="@layout/uwu_top_no_arrow"
+        android:icon="@drawable/ic_theme_color"
+        android:title="@string/select_theme"
+        android:summary=""
+        android:widgetLayout="@layout/preference_widget_circle" />
+
+    <DropDownPreference
+        android:key="contrast_level"
+        android:layout="@layout/uwu_mid"
+        android:title="@string/contrast_level"
+        android:summary="@string/contrast_level_summary"
+        android:entries="@array/contrast_level_entries"
+        android:entryValues="@array/contrast_level_values"
+        android:defaultValue="@string/contrast_level_default_value"
+        android:icon="@drawable/ic_theme_contrast" />
+
+    <DropDownPreference
+        android:key="dark_mode"
+        android:layout="@layout/uwu_mid"
+        android:icon="@drawable/ic_theme_dark"
+        android:title="@string/theme_mode"
+        android:entries="@array/dark_mode_entries"
+        android:entryValues="@array/dark_mode_values"
+        android:defaultValue="@string/theme_mode_default_value" />
+
+    <SwitchPreferenceCompat
+        android:key="amoled_mode"
+        android:layout="@layout/uwu_mid_switch"
+        android:icon="@drawable/ic_theme_amoled"
+        android:title="@string/amoled_mode"
+        android:defaultValue="@bool/amoled_mode_default"
+        android:widgetLayout="@layout/uwu_switch" />
+
+    <SwitchPreferenceCompat
+        android:key="dynamic_theme"
+        android:layout="@layout/uwu_bot_switch"
+        android:icon="@drawable/ic_theme_dynamic"
+        android:title="@string/dynamic_color"
+        android:widgetLayout="@layout/uwu_switch"
+        android:defaultValue="@bool/dynamic_theme_default" />
+
+</PreferenceScreen>

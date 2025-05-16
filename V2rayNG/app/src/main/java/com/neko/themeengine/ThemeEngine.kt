@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
 import com.neko.v2ray.R
 
-class ThemeEngine private constructor(context: Context) {
+class ThemeEngine private constructor(private val context: Context) {
 
-    private val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+    private val prefs = context.getSharedPreferences("theme_engine_prefs", Context.MODE_PRIVATE)
 
     private var isFirstStart: Boolean
         get() = prefs.getBoolean(KEY_FIRST_START, true)
@@ -19,7 +19,7 @@ class ThemeEngine private constructor(context: Context) {
 
     init {
         if (isFirstStart) {
-            applyDefaultValues(context)
+            setDefaultValues()
             isFirstStart = false
         }
     }
@@ -27,9 +27,7 @@ class ThemeEngine private constructor(context: Context) {
     var themeMode: Int
         get() = prefs.getInt(KEY_THEME_MODE, ThemeMode.AUTO)
         set(value) {
-            require(value in ThemeMode.AUTO..ThemeMode.DARK) {
-                "Invalid theme mode. Use ThemeMode.AUTO, LIGHT, or DARK"
-            }
+            require(value in 0..2) { "Invalid ThemeMode value: $value" }
             prefs.edit { putInt(KEY_THEME_MODE, value) }
             AppCompatDelegate.setDefaultNightMode(
                 when (value) {
@@ -40,72 +38,80 @@ class ThemeEngine private constructor(context: Context) {
             )
         }
 
+    private val nightMode: Int
+        get() = when (themeMode) {
+            ThemeMode.LIGHT -> AppCompatDelegate.MODE_NIGHT_NO
+            ThemeMode.DARK -> AppCompatDelegate.MODE_NIGHT_YES
+            else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        }
+
     var isDynamicTheme: Boolean
         get() = prefs.getBoolean(KEY_DYNAMIC_THEME, Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
         set(value) = prefs.edit { putBoolean(KEY_DYNAMIC_THEME, value) }
 
     var staticTheme: Theme
-        get() = Theme.values()[prefs.getInt(KEY_STATIC_THEME, Theme.BlueVariant.ordinal)]
-        set(value) = prefs.edit { putInt(KEY_STATIC_THEME, value.ordinal) }
+        get() = Theme.values().getOrElse(prefs.getInt(KEY_APP_THEME, Theme.Blue.ordinal)) { Theme.Blue }
+        set(value) = prefs.edit { putInt(KEY_APP_THEME, value.ordinal) }
 
-    fun getTheme(): Int {
-        return if (hasS() && isDynamicTheme) R.style.Theme_ThemeEngine_Dynamic
-        else staticTheme.themeId
-    }
+    fun getTheme(): Int =
+        if (hasS() && isDynamicTheme) R.style.Theme_ThemeEngine_Dynamic else staticTheme.themeId
 
     fun resetTheme() {
-        prefs.edit { remove(KEY_STATIC_THEME) }
+        prefs.edit { remove(KEY_APP_THEME) }
     }
 
-    private fun applyDefaultValues(context: Context) {
+    fun switchContrast(level: ContrastLevel) {
+        staticTheme = staticTheme.getContrastTheme(level)
+    }
+
+    var isTrueBlack: Boolean
+        get() = prefs.getBoolean(KEY_TRUE_BLACK, false)
+        set(value) = prefs.edit { putBoolean(KEY_TRUE_BLACK, value) }
+
+    private fun setDefaultValues() {
+        isTrueBlack = context.getBooleanSafe(R.bool.true_black, false)
         themeMode = context.getIntSafe(R.integer.theme_mode, ThemeMode.AUTO)
-        staticTheme = Theme.values()[context.getIntSafe(R.integer.static_theme, Theme.BlueVariant.ordinal)]
+        staticTheme = Theme.Blue
         isDynamicTheme = context.getBooleanSafe(R.bool.dynamic_theme, hasS()) && hasS()
     }
 
     companion object {
-        @Volatile
         private var INSTANCE: ThemeEngine? = null
 
-        fun getInstance(context: Context): ThemeEngine {
-            return INSTANCE ?: synchronized(this) {
+        fun getInstance(context: Context): ThemeEngine =
+            INSTANCE ?: synchronized(this) {
                 INSTANCE ?: ThemeEngine(context.applicationContext).also { INSTANCE = it }
             }
-        }
 
-        fun applyToActivities(application: Application) {
-            application.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
+        fun applyToActivities(app: Application) {
+            app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
                 override fun onActivityPreCreated(activity: Activity, savedInstanceState: Bundle?) {
                     applyToActivity(activity)
                 }
 
-                override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
-                override fun onActivityStarted(activity: Activity) {}
-                override fun onActivityResumed(activity: Activity) {}
-                override fun onActivityPaused(activity: Activity) {}
-                override fun onActivityStopped(activity: Activity) {}
-                override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
-                override fun onActivityDestroyed(activity: Activity) {}
+                override fun onActivityCreated(a: Activity, s: Bundle?) {}
+                override fun onActivityStarted(a: Activity) {}
+                override fun onActivityResumed(a: Activity) {}
+                override fun onActivityPaused(a: Activity) {}
+                override fun onActivityStopped(a: Activity) {}
+                override fun onActivitySaveInstanceState(a: Activity, b: Bundle) {}
+                override fun onActivityDestroyed(a: Activity) {}
             })
         }
 
         fun applyToActivity(activity: Activity) {
-            with(getInstance(activity)) {
-                activity.theme.applyStyle(getTheme(), true)
-                AppCompatDelegate.setDefaultNightMode(
-                    when (themeMode) {
-                        ThemeMode.LIGHT -> AppCompatDelegate.MODE_NIGHT_NO
-                        ThemeMode.DARK -> AppCompatDelegate.MODE_NIGHT_YES
-                        else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-                    }
-                )
+            val engine = getInstance(activity)
+            activity.theme.applyStyle(engine.getTheme(), true)
+            if (engine.isTrueBlack) {
+                activity.theme.applyStyle(R.style.ThemeOverlay_Black, true)
             }
+            AppCompatDelegate.setDefaultNightMode(engine.nightMode)
         }
 
-        private const val PREFS_NAME = "theme_engine_prefs"
-        private const val KEY_FIRST_START = "first_start"
         private const val KEY_THEME_MODE = "theme_mode"
         private const val KEY_DYNAMIC_THEME = "dynamic_theme"
-        private const val KEY_STATIC_THEME = "app_theme"
+        private const val KEY_APP_THEME = "app_theme"
+        private const val KEY_TRUE_BLACK = "true_black"
+        private const val KEY_FIRST_START = "first_start"
     }
 }

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:layout_height="56dp"
-    tools:layout_width="56dp">
+    android:id="@+id/card_view"
+    android:layout_width="54dp"
+    android:layout_height="54dp"
+    android:layout_margin="4dp"
+    android:checkable="true"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="12dp"
+    app:checkedIconMargin="15dp"
+    app:checkedIcon="@drawable/uwu_check">
 
     <com.neko.themeengine.CircleImageView
         android:id="@+id/color_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:checkable="true"
-        app:contentPadding="12dp"
-        tools:backgroundTint="@color/blue_primary"
-        tools:ignore="ContentDescription" />
+        android:layout_margin="6dp" />
 
-</FrameLayout>
+</com.google.android.material.card.MaterialCardView>

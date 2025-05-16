@@ -479,5 +479,43 @@
     <string name="export">Export</string>
     <string name="load_servers">Load Servers</string>
     <string name="enter_servers_hint">Enter servers (one per line)</string>
+    <string name="cancel">Cancel</string>
+    <string name="default_text">Default</string>
+    <string name="theme_settings">Theme Settings</string>
+    <string name="choose_theme">Choose Theme</string>
+    <string name="theme">Theme</string>
+    <string name="theme_preview_summary">Preview of current theme</string>
+    <string name="amoled_description">Amoled theme (Apply amoled background theme)</string>
+    <string name="disable_dynamic_for_amoled">Disable Dynamic Color to use AMOLED mode</string>
+    <string name="disable_amoled_for_dynamic">Disable AMOLED Mode to use Dynamic Color</string>
+    <string name="dynamic_color_desc">If dynamic color is enabled then AMOLED mode cannot be used</string>
+    <string name="select_theme">Select Theme</string>
+    <string name="contrast_level">Contrast Level</string>
+    <string name="contrast_level_summary">Choose contrast strength for current theme</string>
+    <string name="contrast_level_default_value">DEFAULT</string>
+    <string name="theme_mode">Theme Mode</string>
+    <string name="theme_mode_default_value">0</string>
+    <string name="amoled_mode">AMOLED Mode</string>
+    <string name="dynamic_color">Dynamic color</string>
+    <string-array name="contrast_level_entries">
+        <item>Default</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+    <string-array name="contrast_level_values">
+        <item>DEFAULT</item>
+        <item>MEDIUM</item>
+        <item>HIGH</item>
+    </string-array>
+    <string-array name="dark_mode_entries">
+        <item>Follow system</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="dark_mode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
     <!-- Neko strings -->
 </resources>

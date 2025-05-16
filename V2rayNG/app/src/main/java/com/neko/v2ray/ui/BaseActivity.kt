@@ -14,14 +14,40 @@ import com.neko.v2ray.handler.SettingsManager
 import com.neko.v2ray.helper.CustomDividerItemDecoration
 import com.neko.v2ray.util.MyContextWrapper
 import com.neko.v2ray.util.Utils
+import com.neko.themeengine.Theme
 import com.neko.themeengine.ThemeEngine
 
 abstract class BaseActivity : AppCompatActivity() {
 
+    private var lastKnownTheme: Theme? = null
+    private var lastKnownNightMode: Int = -1
+    private var lastKnownDynamic: Boolean = false
+    private var lastKnownTrueBlack: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ThemeEngine.applyToActivity(this)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        ThemeEngine.applyToActivity(this)
+
+        val engine = ThemeEngine.getInstance(this)
+        lastKnownTheme = engine.staticTheme
+        lastKnownNightMode = engine.themeMode
+        lastKnownDynamic = engine.isDynamicTheme
+        lastKnownTrueBlack = engine.isTrueBlack
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val engine = ThemeEngine.getInstance(this)
+
+        val themeChanged = engine.staticTheme != lastKnownTheme
+        val modeChanged = engine.themeMode != lastKnownNightMode
+        val dynamicChanged = engine.isDynamicTheme != lastKnownDynamic
+        val trueBlackChanged = engine.isTrueBlack != lastKnownTrueBlack
+
+        if (themeChanged || modeChanged || dynamicChanged || trueBlackChanged) {
+            recreate()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {

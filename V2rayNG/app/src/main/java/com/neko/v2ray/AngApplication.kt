@@ -9,6 +9,7 @@ import com.tencent.mmkv.MMKV
 import com.neko.v2ray.AppConfig.ANG_PACKAGE
 import com.neko.v2ray.handler.SettingsManager
 import com.neko.crashlog.CrashHandler
+import com.neko.themeengine.ThemeEngine
 
 class AngApplication : MultiDexApplication() {
     companion object {
@@ -33,6 +34,7 @@ class AngApplication : MultiDexApplication() {
      */
     override fun onCreate() {
         super.onCreate()
+        ThemeEngine.applyToActivities(this)
         // handler crash log notification dialog
         Thread.setDefaultUncaughtExceptionHandler(CrashHandler(this))
 
