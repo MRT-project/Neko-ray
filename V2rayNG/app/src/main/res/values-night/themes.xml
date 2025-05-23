@@ -73,7 +73,7 @@
 
     <style name="ThemeOverlay.Uwu.Material3.BottomSheetDialog" parent="@style/ThemeOverlay.Material3.BottomSheetDialog">
         <item name="android:statusBarColor">?colorPrimary</item>
-        <item name="android:navigationBarColor">@color/uwu_bg_card</item>
+        <item name="android:navigationBarColor">@color/uwu_bg</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowAnimationStyle">@style/Animation.Material3.BottomSheetDialog</item>

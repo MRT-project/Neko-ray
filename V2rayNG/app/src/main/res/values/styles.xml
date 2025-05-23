@@ -262,7 +262,7 @@
 
     <style name="AboutLibrariesStyle" parent="">
         <!-- AboutLibraries specific values -->
-        <item name="aboutLibrariesCardBackground">@color/uwu_bg_card</item>
+        <item name="aboutLibrariesCardBackground">?attr/colorCard</item>
         <item name="aboutLibrariesDescriptionTitle">?android:textColorPrimary</item>
         <item name="aboutLibrariesDescriptionText">?android:textColorSecondary</item>
         <item name="aboutLibrariesDescriptionDivider">@color/description_divider</item>

@@ -71,7 +71,7 @@
                             android:background="@drawable/uwu_bg_circle_arrow"
                             android:layout_width="28.0dip"
                             android:layout_height="28.0dip"
-                            android:backgroundTint="@color/uwu_bg_dialog_bottomshet">
+                            android:backgroundTint="@color/uwu_bg_color">
 
                             <ImageView
                                 android:layout_width="25.0dip"
