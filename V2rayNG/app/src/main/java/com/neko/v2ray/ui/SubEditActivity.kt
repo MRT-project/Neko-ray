@@ -9,6 +9,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import androidx.lifecycle.lifecycleScope
+import com.neko.v2ray.AppConfig
 import com.neko.v2ray.R
 import com.neko.v2ray.databinding.ActivitySubEditBinding
 import com.neko.v2ray.dto.SubscriptionItem
@@ -163,19 +164,28 @@ class SubEditActivity : BaseActivity() {
      */
     private fun deleteServer(): Boolean {
         if (editSubId.isNotEmpty()) {
-            MaterialAlertDialogBuilder(this).setMessage(R.string.del_config_comfirm)
-                .setPositiveButton(android.R.string.ok) { _, _ ->
-                    lifecycleScope.launch(Dispatchers.IO) {
-                        MmkvManager.removeSubscription(editSubId)
-                        launch(Dispatchers.Main) {
-                            finish()
+            if (MmkvManager.decodeSettingsBool(AppConfig.PREF_CONFIRM_REMOVE) == true) {
+                MaterialAlertDialogBuilder(this).setMessage(R.string.del_config_comfirm)
+                    .setPositiveButton(android.R.string.ok) { _, _ ->
+                        lifecycleScope.launch(Dispatchers.IO) {
+                            MmkvManager.removeSubscription(editSubId)
+                            launch(Dispatchers.Main) {
+                                finish()
+                            }
                         }
                     }
+                    .setNegativeButton(android.R.string.cancel) { _, _ ->
+                        // do nothing
+                    }
+                    .show()
+            } else {
+                lifecycleScope.launch(Dispatchers.IO) {
+                    MmkvManager.removeSubscription(editSubId)
+                    launch(Dispatchers.Main) {
+                        finish()
+                    }
                 }
-                .setNegativeButton(android.R.string.cancel) { _, _ ->
-                    // do nothing
-                }
-                .show()
+            }
         }
         return true
     }
