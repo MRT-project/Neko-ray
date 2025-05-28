@@ -23,20 +23,11 @@ class V2rayConfigActivity : BaseActivity() {
     private lateinit var spinnerServer: Spinner
 
     private val base64Urls = listOf(
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9BbGxfQ29uZmlnc19TdWIudHh0",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWIxLnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWIyLnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWIzLnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWI0LnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWI1LnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWI2LnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWI3LnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWI4LnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWI5LnR4dA==",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWIxMC50eHQ=",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWIxMS50eHQ=",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWIxMi50eHQ=",
-        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JhcnJ5LWZhci9WMnJheS1Db25maWdzL3JlZnMvaGVhZHMvbWFpbi9TdWIxMy50eHQ=",
+        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0Vwb2Rvbmlvcy92MnJheS1jb25maWdzL3JlZnMvaGVhZHMvbWFpbi9BbGxfQ29uZmlnc19TdWIudHh0",
+        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3Jvb3N0ZXJraWQvb3BlbnByb3h5bGlzdC9yZWZzL2hlYWRzL21haW4vVjJSQVlfUkFXLnR4dA==",
+        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL21pbGFkdGFoYW5pYW4vVjJSYXlDRkdEdW1wZXIvcmVmcy9oZWFkcy9tYWluL2NvbmZpZy50eHQ=",
+        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tLzc0NjQ3L1Byb3hpZnkvcmVmcy9oZWFkcy9tYWluL1N1YnNjcmlwdGlvbi0xLnR4dA==",
+        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2hhbnMtdGhvbWFzL3YycmF5LXN1YnNjcmlwdGlvbi9yZWZzL2hlYWRzL21hc3Rlci9zZXJ2ZXJzLnR4dA==",
         "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FMSUlMQVBSTy92MnJheU5HLUNvbmZpZy9tYWluL3NlcnZlci50eHQ="
     )
 
