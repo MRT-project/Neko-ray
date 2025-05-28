@@ -68,6 +68,15 @@ class ThemeEngine private constructor(private val context: Context) {
         get() = prefs.getBoolean(KEY_TRUE_BLACK, false)
         set(value) = prefs.edit { putBoolean(KEY_TRUE_BLACK, value) }
 
+    var appFont: AppFont
+        get() {
+            val name = prefs.getString(KEY_APP_FONT, AppFont.DEFAULT.name)!!
+            return AppFont.valueOf(name)
+        }
+        set(value) {
+            prefs.edit { putString(KEY_APP_FONT, value.name) }
+        }
+
     private fun setDefaultValues() {
         isTrueBlack = context.getBooleanSafe(R.bool.true_black, false)
         themeMode = context.getIntSafe(R.integer.theme_mode, ThemeMode.AUTO)
@@ -113,5 +122,6 @@ class ThemeEngine private constructor(private val context: Context) {
         private const val KEY_APP_THEME = "app_theme"
         private const val KEY_TRUE_BLACK = "true_black"
         private const val KEY_FIRST_START = "first_start"
+        private const val KEY_APP_FONT = "app_font"
     }
 }

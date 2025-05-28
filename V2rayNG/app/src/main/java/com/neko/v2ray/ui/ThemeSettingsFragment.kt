@@ -1,7 +1,10 @@
 package com.neko.v2ray.ui
 
+import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import androidx.preference.DropDownPreference
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
@@ -28,6 +31,7 @@ class ThemeSettingsFragment : PreferenceFragmentCompat() {
         setupDarkMode()
         val amoledPref = setupAmoledToggle()
         setupDynamicThemeToggle(amoledPref)
+        setupFontPreference()
     }
 
     private fun setupThemePicker() {
@@ -175,6 +179,30 @@ private fun setupContrastPreference() {
                 }
             }
             true
+        }
+    }
+
+    private fun setupFontPreference() {
+        findPreference<ListPreference>("font")?.apply {
+            val current = ThemeEngine.getInstance(requireContext()).appFont.name
+            value = current
+    
+            val index = findIndexOfValue(current)
+            if (index >= 0) summary = entries[index]
+    
+            setOnPreferenceChangeListener { preference, newValue ->
+                val listPref = preference as ListPreference
+                val newFontName = newValue as String
+                val newFont = com.neko.themeengine.AppFont.valueOf(newFontName)
+    
+                ThemeEngine.getInstance(requireContext()).appFont = newFont
+
+                val newIndex = listPref.findIndexOfValue(newFontName)
+                if (newIndex >= 0) listPref.summary = listPref.entries[newIndex]
+    
+                requireActivity().recreate()
+                true
+            }
         }
     }
 }

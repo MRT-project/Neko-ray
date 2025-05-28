@@ -33,6 +33,16 @@
         android:entryValues="@array/dark_mode_values"
         android:defaultValue="@string/theme_mode_default_value" />
 
+    <ListPreference
+        android:key="font"
+        android:layout="@layout/uwu_mid"
+        android:title="Font"
+        android:summary="Pilih font aplikasi"
+        android:entries="@array/font_names"
+        android:entryValues="@array/font_values"
+        android:defaultValue="DEFAULT"
+        android:icon="@drawable/ic_font" />
+
     <SwitchPreferenceCompat
         android:key="amoled_mode"
         android:layout="@layout/uwu_mid_switch"

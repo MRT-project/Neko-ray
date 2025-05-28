@@ -517,5 +517,31 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    <string-array name="font_names">
+        <item>Default</item>
+        <item>Roboto</item>
+        <item>Lato</item>
+        <item>Montserrat</item>
+        <item>Stencil</item>
+        <item>Poppins</item>
+        <item>Balentia</item>
+        <item>Dreamhour</item>
+        <item>Grunell</item>
+        <item>Shirouga</item>
+        <item>Yomogi</item>
+    </string-array>
+    <string-array name="font_values">
+        <item>DEFAULT</item>
+        <item>ROBOTO</item>
+        <item>LATO</item>
+        <item>MONTSERRAT</item>
+        <item>STENCIL</item>
+        <item>POPPINS</item>
+        <item>BALENTIA</item>
+        <item>DREAMHOUR</item>
+        <item>GRUNELL</item>
+        <item>SHIROUGA</item>
+        <item>YOMOGI</item>
+    </string-array>
     <!-- Neko strings -->
 </resources>
