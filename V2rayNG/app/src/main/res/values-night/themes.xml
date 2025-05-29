@@ -88,9 +88,6 @@
         <item name="android:windowBackground">#000000</item>
         <item name="colorBg">#000000</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Black.BottomSheetDialog</item>
-        <item name="popupTheme">?actionBarPopupTheme</item>
-        <item name="actionBarPopupTheme">@style/AppTheme.PopupOverlay</item>
-        <item name="popupMenuBackground">@drawable/uwu_bg_popup</item>
     </style>
     
     <style name="ThemeOverlay.Black.BottomSheetDialog" parent="ThemeOverlay.Uwu.Material3.BottomSheetDialog">

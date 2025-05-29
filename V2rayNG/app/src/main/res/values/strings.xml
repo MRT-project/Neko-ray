@@ -521,27 +521,31 @@
         <item>Default</item>
         <item>Roboto</item>
         <item>Lato</item>
-        <item>Montserrat</item>
+        <item>Wintering</item>
         <item>Stencil</item>
         <item>Poppins</item>
-        <item>Balentia</item>
+        <item>Mistery</item>
         <item>Dreamhour</item>
         <item>Grunell</item>
         <item>Shirouga</item>
-        <item>Yomogi</item>
+        <item>Bubblez</item>
+        <item>Japan</item>
+        <item>OnePiece</item>
     </string-array>
     <string-array name="font_values">
         <item>DEFAULT</item>
         <item>ROBOTO</item>
         <item>LATO</item>
-        <item>MONTSERRAT</item>
+        <item>WINTERING</item>
         <item>STENCIL</item>
         <item>POPPINS</item>
-        <item>BALENTIA</item>
+        <item>MISTERY</item>
         <item>DREAMHOUR</item>
         <item>GRUNELL</item>
         <item>SHIROUGA</item>
-        <item>YOMOGI</item>
+        <item>BUBBLEZ</item>
+        <item>JAPAN</item>
+        <item>ONEPIECE</item>
     </string-array>
     <!-- Neko strings -->
 </resources>
