@@ -33,17 +33,25 @@ class BlurImageView @JvmOverloads constructor(
     private val maxRadius = 25
     private val minRadius = 1
     private var imageOnView: Drawable? = null
+    private var initialRadius = 0
+    private var appliedBlur = false
 
     init {
-        // Baca atribut XML dan langsung terapkan blur jika radius disetel
+        // Simpan radius dari XML
         attrs?.let {
-            if (drawable != null) {
-                imageOnView = drawable
-                val typedArray = context.theme.obtainStyledAttributes(it, R.styleable.BlurImageView, 0, 0)
-                val radius = typedArray.getInteger(R.styleable.BlurImageView_radius, 0)
-                setBlur(radius)
-                typedArray.recycle()
-            }
+            val typedArray = context.theme.obtainStyledAttributes(it, R.styleable.BlurImageView, 0, 0)
+            initialRadius = typedArray.getInteger(R.styleable.BlurImageView_radius, 0)
+            typedArray.recycle()
+        }
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        // Terapkan blur saat drawable sudah tersedia
+        if (!appliedBlur && drawable != null) {
+            imageOnView = drawable
+            setBlur(initialRadius)
+            appliedBlur = true
         }
     }
 
@@ -94,7 +102,11 @@ class BlurImageView @JvmOverloads constructor(
      */
     @RequiresApi(Build.VERSION_CODES.S)
     private fun applyViewBlurEffect(radius: Int) {
-        val effect = RenderEffect.createBlurEffect(radius.toFloat(), radius.toFloat(), Shader.TileMode.CLAMP)
+        val effect = RenderEffect.createBlurEffect(
+            radius.toFloat(),
+            radius.toFloat(),
+            Shader.TileMode.CLAMP
+        )
         this.setRenderEffect(effect)
     }
 

@@ -37,7 +37,6 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/uwu_banner_image_3"
                     android:scaleType="centerCrop"
-                    android:elevation="0.0dip"
                     app:radius="10" />
                 <View
                     android:background="@android:color/black"
