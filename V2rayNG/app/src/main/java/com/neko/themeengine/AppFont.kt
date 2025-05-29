@@ -7,12 +7,14 @@ enum class AppFont(@FontRes val fontRes: Int, val displayName: String) {
     DEFAULT(0, "Default"),
     ROBOTO(R.font.roboto_regular, "Roboto"),
     LATO(R.font.lato_regular, "Lato"),
-    MONTSERRAT(R.font.montserrat_thin, "Montserrat"),
+    WINTERING(R.font.wintering, "Wintering"),
     STENCIL(R.font.semibold_stencil, "Stencil"),
     POPPINS(R.font.poppins, "Poppins"),
-    BALENTIA(R.font.balentia, "Balentia"),
+    MISTERY(R.font.mistery, "Mistery"),
     DREAMHOUR(R.font.dreamhour, "Dreamhour"),
     GRUNELL(R.font.grunell, "Grunell"),
     SHIROUGA(R.font.shirouga, "Shirouga"),
-    YOMOGI(R.font.yomogi, "Yomogi")
+    BUBBLEZ(R.font.bubblez, "Bubblez"),
+    JAPAN(R.font.japan, "Japan"),
+    ONEPIECE(R.font.onepiece, "OnePiece")
 }
