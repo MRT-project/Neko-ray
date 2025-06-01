@@ -37,8 +37,8 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/uwu_banner_image_3"
                     android:scaleType="centerCrop"
-                    android:elevation="0.0dip"
-                    app:radius="2" />
+                    app:blurRadius="5"
+                    app:blurScale="0.5"/>
                 <View
                     android:background="@android:color/black"
                     android:layout_width="match_parent"
@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-20.0dip"
-                    android:text=" @string/app_name"
+                    android:text=" @string/app_name "
                     android:maxLines="2"
                     android:singleLine="false"
                     android:textAllCaps="true"

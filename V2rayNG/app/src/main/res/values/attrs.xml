@@ -29,7 +29,8 @@
     <attr name="NoInternet_Dialog_Signal_cloudColorThree" format="reference" />
 
     <declare-styleable name="BlurImageView">
-        <attr name="radius" format="integer" />
+        <attr name="blurRadius" format="float" />
+        <attr name="blurScale" format="float" />
     </declare-styleable>
 
     <declare-styleable name="WaveView">
