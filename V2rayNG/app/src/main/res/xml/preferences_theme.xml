@@ -53,10 +53,16 @@
 
     <SwitchPreferenceCompat
         android:key="dynamic_theme"
-        android:layout="@layout/uwu_bot_switch"
+        android:layout="@layout/uwu_mid_switch"
         android:icon="@drawable/ic_theme_dynamic"
         android:title="@string/dynamic_color"
         android:widgetLayout="@layout/preference_widget_switch"
         android:defaultValue="@bool/dynamic_theme_default" />
 
+    <Preference
+        android:key="indicator_style"
+        android:layout="@layout/uwu_bot"
+        android:title="Gaya Indikator Server"
+        android:summary="Pilih tampilan indikator server aktif"
+        android:icon="@drawable/uwu_ic_navigation_apps" />
 </PreferenceScreen>

@@ -7,7 +7,6 @@
         </shape>
     </item>
     <item
-        android:top="4dp"
         android:bottom="4dp">
         <inset>
             <shape android:shape="rectangle">

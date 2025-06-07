@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <shape android:shape="rectangle">
-            <solid android:color="?attr/colorThemeUwu" />
+        <shape>
+            <gradient
+                android:startColor="?attr/colorCard"
+                android:endColor="?attr/colorCard"
+                android:type="linear"
+                android:centerColor="?attr/colorThemeUwu" />
             <corners android:radius="24dp" />
         </shape>
     </item>

@@ -9,6 +9,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
 import com.neko.themeengine.ContrastLevel
+import com.neko.themeengine.IndicatorStyleBottomSheet
 import com.neko.themeengine.ThemeChooserDialogBuilder
 import com.neko.themeengine.ThemeEngine
 import com.neko.themeengine.hasS
@@ -32,6 +33,7 @@ class ThemeSettingsFragment : PreferenceFragmentCompat() {
         val amoledPref = setupAmoledToggle()
         setupDynamicThemeToggle(amoledPref)
         setupFontPreference()
+        setupIndicatorStylePreference()
     }
 
     private fun setupThemePicker() {
@@ -203,6 +205,15 @@ private fun setupContrastPreference() {
                 requireActivity().recreate()
                 true
             }
+        }
+    }
+
+    private fun setupIndicatorStylePreference() {
+        findPreference<Preference>("indicator_style")?.setOnPreferenceClickListener {
+            com.neko.themeengine.IndicatorStyleBottomSheet(requireContext()) {
+                requireActivity().recreate()
+            }.show()
+            true
         }
     }
 }

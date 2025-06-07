@@ -31,6 +31,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+import com.neko.themeengine.ThemeEngine
+
 class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<MainRecyclerAdapter.BaseViewHolder>(), ItemTouchHelperAdapter {
     companion object {
         private const val VIEW_TYPE_ITEM = 1
@@ -76,8 +78,9 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
             }
 
             //layoutIndicator
+            val style = com.neko.themeengine.ThemeEngine.getInstance(mActivity).indicatorStyle
             if (guid == MmkvManager.getSelectServer()) {
-                holder.itemMainBinding.layoutIndicator.setBackgroundResource(R.drawable.uwu_selected_indicator)
+                holder.itemMainBinding.layoutIndicator.setBackgroundResource(style.drawableRes)
             } else {
                 holder.itemMainBinding.layoutIndicator.setBackgroundResource(0)
             }
