@@ -97,7 +97,7 @@
         <ListPreference
             android:layout="@layout/uwu_bot"
             android:icon="@drawable/uwu_ic_key_outline"
-            android:defaultValue="0"
+            android:defaultValue="1"
             android:entries="@array/vpn_bypass_lan"
             android:entryValues="@array/vpn_bypass_lan_value"
             android:key="pref_vpn_bypass_lan"

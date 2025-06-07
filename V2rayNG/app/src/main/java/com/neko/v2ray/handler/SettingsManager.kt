@@ -118,7 +118,7 @@ object SettingsManager {
     }
 
     fun routingRulesetsBypassLan(): Boolean {
-        val vpnBypassLan = MmkvManager.decodeSettingsString(AppConfig.PREF_VPN_BYPASS_LAN) ?: "0"
+        val vpnBypassLan = MmkvManager.decodeSettingsString(AppConfig.PREF_VPN_BYPASS_LAN) ?: "1"
         if (vpnBypassLan == "1") {
             return true
         } else if (vpnBypassLan == "2") {
