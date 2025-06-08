@@ -62,7 +62,7 @@
     <Preference
         android:key="indicator_style"
         android:layout="@layout/uwu_bot"
-        android:title="Gaya Indikator Server"
-        android:summary="Pilih tampilan indikator server aktif"
+        android:title="@string/pref_indicator_style_title"
+        android:summary="@string/pref_indicator_style_summary"
         android:icon="@drawable/uwu_ic_navigation_apps" />
 </PreferenceScreen>

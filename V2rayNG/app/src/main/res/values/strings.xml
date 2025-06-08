@@ -547,5 +547,8 @@
         <item>JAPAN</item>
         <item>ONEPIECE</item>
     </string-array>
+    <string name="indicator_style_title">Select Indicator Style</string>
+    <string name="pref_indicator_style_title">Server Indicator Style</string>
+    <string name="pref_indicator_style_summary">Select the active server indicator display</string>
     <!-- Neko strings -->
 </resources>

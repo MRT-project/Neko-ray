@@ -1,21 +1,21 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:layout_margin="8dp">
-
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <ImageView
         android:id="@+id/imagePreview"
+        android:background="@drawable/uwu_bg_sin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:background="@drawable/uwu_bg_sin" />
-
+        android:layout_height="120.0dip"
+        android:scaleType="centerCrop" />
     <ImageView
-        android:id="@+id/imageCheck"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
         android:layout_gravity="center"
+        android:id="@+id/imageCheck"
+        android:visibility="gone"
+        android:layout_width="34.0dip"
+        android:layout_height="34.0dip"
         android:src="@drawable/uwu_check"
-        android:tint="?attr/colorThemeUwu"
-        android:visibility="gone" />
+        android:tint="?attr/colorThemeUwu" />
 </FrameLayout>

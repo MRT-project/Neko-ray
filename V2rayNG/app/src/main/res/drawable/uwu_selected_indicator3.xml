@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <shape>
-            <gradient
-                android:startColor="?attr/colorThemeUwu"
-                android:endColor="?attr/colorThemeUwu"
-                android:type="linear"
-                android:centerColor="?attr/colorCard" />
-            <corners android:radius="24dp" />
+        <shape
+            android:shape="rectangle">
+            <solid
+                android:color="?colorThemeUwu" />
+            <corners
+                android:radius="24.0dip" />
         </shape>
     </item>
     <item
-        android:top="4dp"
-        android:bottom="4dp">
+        android:top="-1.0dip"
+        android:bottom="4.0dip">
         <inset>
-            <shape android:shape="rectangle">
-                <solid android:color="?attr/colorCard" />
-                <corners android:radius="24dp" />
+            <shape
+                android:shape="rectangle">
+                <solid
+                    android:color="?colorCard" />
+                <corners
+                    android:radius="24.0dip" />
             </shape>
         </inset>
     </item>
