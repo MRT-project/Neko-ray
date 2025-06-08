@@ -10,6 +10,5 @@ enum class IndicatorStyle(val drawableRes: Int) {
     UWU4(R.drawable.uwu_selected_indicator4),
     UWU5(R.drawable.uwu_selected_indicator5),
     UWU6(R.drawable.uwu_selected_indicator6),
-    UWU7(R.drawable.uwu_selected_indicator7),
-    UWU8(R.drawable.uwu_selected_indicator8)
+    UWU7(R.drawable.uwu_selected_indicator7)
 }

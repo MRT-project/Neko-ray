@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.text.TextUtils
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,7 +62,16 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
             val profile = mActivity.mainViewModel.serversCache[position].profile
             val isCustom = profile.configType == EConfigType.CUSTOM
 
-            holder.itemView.setBackgroundColor(Color.TRANSPARENT)
+            val isSelected = guid == MmkvManager.getSelectServer()
+
+            if (isSelected) {
+                holder.itemMainBinding.cardView.setCardBackgroundColor(Color.TRANSPARENT)
+            } else {
+                val typedValue = TypedValue()
+                val theme = mActivity.theme
+                theme.resolveAttribute(R.attr.colorCard, typedValue, true)
+                holder.itemMainBinding.cardView.setCardBackgroundColor(typedValue.data)
+            }
 
             //Name address
             holder.itemMainBinding.tvName.text = profile.remarks
