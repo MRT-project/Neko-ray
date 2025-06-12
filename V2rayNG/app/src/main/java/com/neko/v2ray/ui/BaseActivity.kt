@@ -1,7 +1,6 @@
 package com.neko.v2ray.ui
 
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +14,8 @@ import com.neko.themeengine.AppFont
 import com.neko.themeengine.FontContextWrapper
 import com.neko.themeengine.Theme
 import com.neko.themeengine.ThemeEngine
+import com.neko.v2ray.AppConfig
+import com.neko.v2ray.handler.MmkvManager
 
 abstract class BaseActivity : AppCompatActivity() {
 
@@ -23,6 +24,7 @@ abstract class BaseActivity : AppCompatActivity() {
     private var lastKnownDynamic: Boolean = false
     private var lastKnownTrueBlack: Boolean = false
     private var lastKnownFont: AppFont? = null
+    private var lastKnownDoubleColumn: Boolean = false
 
     override fun attachBaseContext(newBase: Context) {
         val localeWrapped = MyContextWrapper.wrap(newBase, SettingsManager.getLocale())
@@ -40,6 +42,7 @@ abstract class BaseActivity : AppCompatActivity() {
         lastKnownDynamic = engine.isDynamicTheme
         lastKnownTrueBlack = engine.isTrueBlack
         lastKnownFont = engine.appFont
+        lastKnownDoubleColumn = MmkvManager.decodeSettingsBool(AppConfig.PREF_DOUBLE_COLUMN_DISPLAY, false)
     }
 
     override fun onResume() {
@@ -51,8 +54,9 @@ abstract class BaseActivity : AppCompatActivity() {
         val dynamicChanged = engine.isDynamicTheme != lastKnownDynamic
         val trueBlackChanged = engine.isTrueBlack != lastKnownTrueBlack
         val fontChanged = engine.appFont != lastKnownFont
+        val doubleColumnChanged = MmkvManager.decodeSettingsBool(AppConfig.PREF_DOUBLE_COLUMN_DISPLAY, false) != lastKnownDoubleColumn
 
-        if (themeChanged || modeChanged || dynamicChanged || trueBlackChanged || fontChanged) {
+        if (themeChanged || modeChanged || dynamicChanged || trueBlackChanged || fontChanged || doubleColumnChanged) {
             recreate()
         }
     }
