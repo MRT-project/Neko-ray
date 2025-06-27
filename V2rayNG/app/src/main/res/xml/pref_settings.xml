@@ -95,7 +95,7 @@
             android:title="@string/title_pref_vpn_dns"/>
 
         <ListPreference
-            android:layout="@layout/uwu_bot"
+            android:layout="@layout/uwu_mid"
             android:icon="@drawable/uwu_ic_key_outline"
             android:defaultValue="1"
             android:entries="@array/vpn_bypass_lan"
@@ -104,6 +104,15 @@
             android:summary="%s"
             android:title="@string/title_pref_vpn_bypass_lan" />
 
+        <ListPreference
+            android:layout="@layout/uwu_bot"
+            android:icon="@drawable/uwu_ic_key_outline"
+            android:defaultValue="0"
+            android:entries="@array/vpn_interface_address"
+            android:entryValues="@array/vpn_interface_address_value"
+            android:key="pref_vpn_interface_address_config_index"
+            android:summary="%s"
+            android:title="@string/title_pref_vpn_interface_address" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/title_ui_settings">
