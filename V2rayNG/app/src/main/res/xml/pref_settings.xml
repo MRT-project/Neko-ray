@@ -256,7 +256,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/title_advanced">
+    <PreferenceCategory android:title="@string/title_core_settings">
 
         <CheckBoxPreference
             android:icon="@drawable/uwu_ic_lan"
@@ -305,22 +305,26 @@
             android:summary="@string/summary_pref_dns_hosts"
             android:title="@string/title_pref_dns_hosts" />
 
-        <EditTextPreference
-            android:key="pref_delay_test_url"
-            android:icon="@drawable/uwu_ic_delay"
-            android:layout="@layout/uwu_mid"
-            android:summary="@string/summary_pref_delay_test_url"
-            android:title="@string/title_pref_delay_test_url" />
-
         <ListPreference
             android:defaultValue="warning"
             android:icon="@drawable/uwu_ic_math_log"
             android:entries="@array/core_loglevel"
-            android:layout="@layout/uwu_mid"
+            android:layout="@layout/uwu_bot"
             android:entryValues="@array/core_loglevel"
             android:key="pref_core_loglevel"
             android:summary="%s"
             android:title="@string/title_core_loglevel"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/title_advanced">
+
+        <EditTextPreference
+            android:key="pref_delay_test_url"
+            android:icon="@drawable/uwu_ic_delay"
+            android:layout="@layout/uwu_top"
+            android:summary="@string/summary_pref_delay_test_url"
+            android:title="@string/title_pref_delay_test_url" />
 
         <ListPreference
             android:icon="@drawable/uwu_ic_key_outline"
