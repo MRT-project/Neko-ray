@@ -233,6 +233,7 @@
     <string name="title_pref_auto_update_interval">自动更新间隔（分钟，最小值 15）</string>
 
     <string name="title_core_loglevel">日志级别</string>
+    <string name="title_outbound_domain_resolve_method">Outbound 域名预解析方式</string>
     <string name="title_mode">模式</string>
     <string name="title_mode_help">点此查看更多帮助</string>
     <string name="title_language">语言</string>

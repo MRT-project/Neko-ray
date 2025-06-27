@@ -236,6 +236,7 @@
     <string name="title_pref_auto_update_interval">فاسله ورۊ کردن خوتکار (اقلن وا 15 دؽقه بۊ)</string>
 
     <string name="title_core_loglevel">سئت داسووا</string>
+    <string name="title_outbound_domain_resolve_method">Outbound domain pre-resolve method</string>
     <string name="title_mode">هالت</string>
     <string name="title_mode_help">سی دووسمندیا وو هیاری بیشتر، ری ای هؽل بزݩ</string>
     <string name="title_language">زۉݩ</string>

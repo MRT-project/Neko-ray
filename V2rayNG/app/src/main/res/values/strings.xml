@@ -241,6 +241,7 @@
     <string name="title_pref_auto_update_interval">Auto Update Interval (Minutes, Min value 15)</string>
 
     <string name="title_core_loglevel">Log Level</string>
+    <string name="title_outbound_domain_resolve_method">Outbound domain pre-resolve method</string>
     <string name="title_mode">Mode</string>
     <string name="title_mode_help">Click me for more help</string>
     <string name="title_language">Language</string>

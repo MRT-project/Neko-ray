@@ -4,6 +4,7 @@ import com.neko.v2ray.AppConfig
 import com.neko.v2ray.dto.NetworkType
 import com.neko.v2ray.dto.ProfileItem
 import com.neko.v2ray.extension.isNotNullEmpty
+import com.neko.v2ray.handler.MmkvManager
 import com.neko.v2ray.util.HttpUtil
 import com.neko.v2ray.util.Utils
 import java.net.URI
@@ -151,7 +152,19 @@ open class FmtBase {
     }
 
     fun getServerAddress(profileItem: ProfileItem): String {
-        return HttpUtil.toIdnDomain(profileItem.server.orEmpty())
-    }
+        if (Utils.isPureIpAddress(profileItem.server.orEmpty())) {
+            return profileItem.server.orEmpty()
+        }
 
+        val domain = HttpUtil.toIdnDomain(profileItem.server.orEmpty())
+        if (MmkvManager.decodeSettingsString(AppConfig.PREF_OUTBOUND_DOMAIN_RESOLVE_METHOD, "1") != "2") {
+            return domain
+        }
+        //Resolve and replace domain
+        val resolvedIps = HttpUtil.resolveHostToIP(domain, MmkvManager.decodeSettingsBool(AppConfig.PREF_PREFER_IPV6))
+        if (resolvedIps.isNullOrEmpty()) {
+            return domain
+        }
+        return resolvedIps.first()
+    }
 }
