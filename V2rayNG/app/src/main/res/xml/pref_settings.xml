@@ -317,6 +317,8 @@
 
         <ListPreference
             android:defaultValue="1"
+            android:icon="@drawable/ic_domain_24"
+            android:layout="@layout/uwu_bot"
             android:entries="@array/outbound_domain_resolve_method"
             android:entryValues="@array/outbound_domain_resolve_method_value"
             android:key="pref_outbound_domain_resolve_method"
