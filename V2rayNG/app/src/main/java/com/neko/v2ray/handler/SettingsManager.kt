@@ -5,23 +5,6 @@ import android.content.res.AssetManager
 import android.text.TextUtils
 import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
-<<<<<<< HEAD:V2rayNG/app/src/main/java/com/neko/v2ray/handler/SettingsManager.kt
-import com.neko.v2ray.AppConfig
-import com.neko.v2ray.AppConfig.ANG_PACKAGE
-import com.neko.v2ray.AppConfig.GEOIP_PRIVATE
-import com.neko.v2ray.AppConfig.GEOSITE_PRIVATE
-import com.neko.v2ray.AppConfig.TAG_DIRECT
-import com.neko.v2ray.dto.EConfigType
-import com.neko.v2ray.dto.Language
-import com.neko.v2ray.dto.ProfileItem
-import com.neko.v2ray.dto.RoutingType
-import com.neko.v2ray.dto.RulesetItem
-import com.neko.v2ray.dto.V2rayConfig
-import com.neko.v2ray.handler.MmkvManager.decodeServerConfig
-import com.neko.v2ray.handler.MmkvManager.decodeServerList
-import com.neko.v2ray.util.JsonUtil
-import com.neko.v2ray.util.Utils
-=======
 import com.neko.v2ray.AppConfig
 import com.neko.v2ray.AppConfig.ANG_PACKAGE
 import com.neko.v2ray.AppConfig.GEOIP_PRIVATE
@@ -38,7 +21,6 @@ import com.neko.v2ray.handler.MmkvManager.decodeServerConfig
 import com.neko.v2ray.handler.MmkvManager.decodeServerList
 import com.neko.v2ray.util.JsonUtil
 import com.neko.v2ray.util.Utils
->>>>>>> 2fb6e62e (Added setting option for VPN interface address):V2rayNG/app/src/main/java/com/v2ray/ang/handler/SettingsManager.kt
 import java.io.File
 import java.io.FileOutputStream
 import java.util.Collections
