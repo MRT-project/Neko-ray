@@ -36,7 +36,7 @@ swiperefreshlayout = "1.1.0"
 toasty = "1.5.2"
 webkit = "1.14.0"
 workRuntimeKtx = "2.10.2"
-aboutLibraries = "12.2.3"
+aboutLibraries = "12.2.4"
 
 [libraries]
 aboutlibraries-core = { module = "com.mikepenz:aboutlibraries-core", version.ref = "aboutLibraries" }
