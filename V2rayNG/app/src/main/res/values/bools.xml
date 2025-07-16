@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="navigation_color">true</bool>
-    <bool name="amoled_mode_default">false</bool>
-    <bool name="dynamic_theme_default">false</bool>
-</resources>

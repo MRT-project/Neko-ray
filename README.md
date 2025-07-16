@@ -51,3 +51,7 @@ A V2Ray client for Android, support [Xray core](https://github.com/XTLS/Xray-cor
 [ヨヴィエ ~ Retired](https://t.me/mobxprjkt) Helps with java coding
 
 [スクロース](https://t.me/milimnavaUwU) For helping
+
+**Info**
+The code has been moved [here.](https://github.com/AnGgIt886/Neko-ray)
+This is just a source to publish the **Neko-ray** application.
