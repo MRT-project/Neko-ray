@@ -42,7 +42,7 @@ A V2Ray client for Android, support [Xray core](https://github.com/XTLS/Xray-cor
 - latest official [domain list](https://github.com/v2fly/domain-list-community) and [ip list](https://github.com/v2fly/geoip) can be imported manually
 - possible to use third party dat file in the same folder, like [h2y](https://guide.v2fly.org/routing/sitedata.html#%E5%A4%96%E7%BD%AE%E7%9A%84%E5%9F%9F%E5%90%8D%E6%96%87%E4%BB%B6)
 
-**Credits**
+***Credits***
 
 [Milim Nava ᓚᘏᗢ #KeepLewd](https://t.me/milimnavaUwU) For inspiration styling
 
@@ -52,6 +52,7 @@ A V2Ray client for Android, support [Xray core](https://github.com/XTLS/Xray-cor
 
 [スクロース](https://t.me/milimnavaUwU) For helping
 
-**Info**
+***Info***
+
 The code has been moved [here.](https://github.com/AnGgIt886/Neko-ray)
 This is just a source to publish the **Neko-ray** application.
