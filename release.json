@@ -1,7 +1,7 @@
 {
     "latestVersion": "1.10.9",
     "latestVersionCode": 1000659,
-    "webUrl": "https://github.com/MRT-project/Neko-ray/releases/tag/v1.10.9",
+    "webUrl": "https://nekorayrelease.pages.dev",
     "apkUrls": {
         "arm64-v8a": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.9/Neko-ray_1.10.9_arm64-v8a.apk",
         "armeabi-v7a": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.9/Neko-ray_1.10.9_armeabi-v7a.apk",
