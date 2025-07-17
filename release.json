@@ -1,27 +1,19 @@
 {
-    "latestVersion": "1.10.8",
-    "latestVersionCode": 1000658,
-    "webUrl": "https://github.com/MRT-project/Neko-ray/releases/tag/v1.10.8",
+    "latestVersion": "1.10.9",
+    "latestVersionCode": 1000659,
+    "webUrl": "https://github.com/MRT-project/Neko-ray/releases/tag/v1.10.9",
     "apkUrls": {
-        "arm64-v8a": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.8/Neko-ray_1.10.8_arm64-v8a.apk",
-        "armeabi-v7a": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.8/Neko-ray_1.10.8_armeabi-v7a.apk",
-        "x86": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.8/Neko-ray_1.10.8_x86.apk",
-        "x86_64": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.8/Neko-ray_1.10.8_x86_64.apk"
+        "arm64-v8a": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.9/Neko-ray_1.10.9_arm64-v8a.apk",
+        "armeabi-v7a": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.9/Neko-ray_1.10.9_armeabi-v7a.apk",
+        "x86": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.9/Neko-ray_1.10.9_x86.apk",
+        "x86_64": "https://github.com/MRT-project/Neko-ray/releases/download/v1.10.9/Neko-ray_1.10.9_x86_64.apk"
     },
     "releaseNotes": [
-        "Updare core v25.6.8",
-        "Optimize delay test, take the minimum value after two tests",
-        "Adding font selection",
-        "Fix the parsing problem of non-English domain",
-        "Adding indicator style",
-        "Fix double column display",
-        "enable VPN bypass LAN By default",
-        "Fix log for plugin",
-        "Fix missing sockopt.domainStrategy",
-        "Fix blinking QSTile when QS panel is opening",
-        "Added setting option for VPN interface address",
-        "Adjustment setting items",
-        "Added setting option for Outbound domain pre-resolve method",
-        "Optimize the source of tls sni"
+        "Adding neko web support",
+        "Adding theme change font size",
+        "Fix export count",
+        "Adding intelligent selection method setting",
+        "Move log level pref to advanced settings",
+        "Fix vpn protected failed"
     ]
 }
